@@ -1,0 +1,11 @@
+import pymysql
+
+connection = pymysql.connect(host='127.0.0.1',
+                             user='Kord',
+                             password='NoMeSaleElShiny',
+                             db='pokemongobot',
+                             charset='utf8mb4',
+                             cursorclass=pymysql.cursors.DictCursor)
+
+
+

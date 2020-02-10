@@ -1,0 +1,18 @@
+Acero Nieve
+Agua Lluvia
+Bicho Lluvia
+Dragon Viento
+Electrico Lluvia
+Fantasma Niebla
+Fuego Soleado
+Hada Nublado
+Hielo Nieve
+Lucha Nublado
+Normal Parcialmente Nublado
+Planta Soleado
+Psiquico Viento
+Roca Parcialmente Nublado
+Siniestro Niebla
+Tierra Soleado
+Veneno Nublado
+Volador Viento

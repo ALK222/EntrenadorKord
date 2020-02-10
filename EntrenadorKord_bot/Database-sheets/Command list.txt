@@ -1,0 +1,6 @@
+start - Starts the boy
+help - Shows help from the bot
+select - put the name of a pokemon and I'll show you all the info I've got from it
+select_boss - put the name of a raiid boss and I'll show you all the info I've got from it
+La siguiente linea no es un comando es la pagina de la que sacaremos la informaci�n para realizar los comandos
+https://pokemon.gameinfo.io/ 
