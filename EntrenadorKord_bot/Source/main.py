@@ -1,17 +1,22 @@
-import telebot
 import string
 import pymysql
-from Source import messages, commands
+import telebot
+from commands import teleCommands
+from messages import messages
 
 kord = telebot.TeleBot("")#insert token here
-kordMessage = messages.messages(kord)
-connection = pymysql.connect(host='127.0.0.1',
+kordMessage = messages(kord)
+connection = pymysql.connect(host='localhost',
                              user='Kord',
                              password='NoMeSaleElShiny',
                              db='pokemongobot',
                              charset='utf8mb4',
                              cursorclass=pymysql.cursors.DictCursor)
-kordCommands = commands.teleCommands(kord, connection)
+
+
+kordCommands = teleCommands(kord, connection)#command handler
+
+
 
 #COMMAND HANDLERS
 

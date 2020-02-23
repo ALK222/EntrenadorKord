@@ -1,3 +1,5 @@
+import math
+
 class teleCommands(object):
     def __init__(self, kord, connection):
         self.kord = kord
@@ -131,7 +133,7 @@ class teleCommands(object):
         split = message.text.split()
         if(len(split) > 1):
             with self.connection as cursor:
-                sql = "SELECT pokemon.NUMDEX, pokemon.NOMBRE, pokemon.KMPERCANDY, wild.pc100 FROM pokemon JOIN wild WHERE pokemon.nombre LIKE '" + split[1] + "' AND wild.NOMBRE_W LIKE '" + split[1] + "'"
+                sql = "SELECT pokemon.NUMDEX, pokemon.NOMBRE, pokemon.KMPERCANDY, pokemon.FOrM, pokemon.att, pokemon.def, pokemon.stam from pokemon WHERE pokemon.nombre LIKE '" + split[1] + "';"
                 cursor.execute(sql)
                 if(cursor.rowcount != 0):
                     result = str(cursor.fetchall())
@@ -197,9 +199,17 @@ class teleCommands(object):
         final = "Nº: " + mensaje[1] + "\n"
         final += "Nombre: " + mensaje[3] + "\n"
         final += "Km para caramelo: " + mensaje[5] + "\n"
-        final += "PC 100: " + mensaje[7] + "\n"
+        final += "Ataque: " + mensaje[9] + "\n"
+        final += "Defensa: " + mensaje[11] + "\n"
+        final += "Stamina: " + mensaje[13] + "\n"
+        final += "PC: " + str(self.calculateCP(att =int(mensaje[9]), defense = int(mensaje[11]), stam = int(mensaje[13])))
         return final
 
+
+    def calculateCP(self, att, defense, stam):
+        lvlscal = 0.7903001
+        pc = ((att + 15) * math.sqrt(defense + 15) * math.sqrt(stam + 15) * lvlscal * lvlscal)/10
+        return int(pc)
 
 
     #SELECT BOSS
