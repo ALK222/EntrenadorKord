@@ -1,0 +1,3 @@
+Telegram bot that gives information about Pokemon Go
+
+Uses https://pypi.org/project/pyTelegramBotAPI/ as the bot api
